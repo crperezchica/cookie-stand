@@ -7,8 +7,8 @@ function hourlySales(){
     for (let i=0; i < hours.length; i++) {
         const hour = hours[i];
         const custPerHour = getRandomInInclusive(this.min, this.max);
-        const cookiesPerHour = custPerHour * this.avg;
-        // const cookiesPerHour = Math.floor(custPerHour * this.avgSold);
+        // const cookiesPerHour = custPerHour * this.avg;
+        const cookiesPerHour = Math.round(custPerHour * this.avgSold);
         const oneHour = {
             hour: hour,
             cookiesSold: cookiesPerHour
@@ -24,13 +24,6 @@ function getRandomInInclusive(min,max){
 }
 
 
-
-// function hourlySales(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-//     +}
-
 const pdx = {
     min: 23,
     max: 65,
@@ -43,65 +36,56 @@ const pdx = {
     return li;
     }
 };
-pdx.hourlySales();
+pdx.salesByHour();
 console.log(pdx);
 
-// const pioneer = () {
-//     min: 3,
-//     max: 24,
-//     avg: 1.2,
-//     salesByHour: hourlySales, 
+const pioneer = { 
+     min: 3,
+     max: 24,
+     avg: 1.2,
+     salesByHour: hourlySales, 
 
-//     render () {
+     render () {
 
-//     }
-// };
-// pioneer.salesByHour();
+     }
+ };
+pioneer.salesByHour();
 
-// const powells = () {
-//     min: 11,
-//     max: 38,
-//     avg: 3.7,
-//     salesByHour: hourlySales,
-//     calcSales: function () {
+const powells = {
+    min: 11,
+    max: 38,
+    avg: 3.7,
+    salesByHour: hourlySales,
 
-//     },
+    render () {
 
-//     render () {
+    }
+};
+powells.salesByHour();
 
-//     }
-// };
-// powells.calcSales();
+const stjohns =  {
+    min: 20,
+    max: 38,
+    avg: 2.3,
+    salesByHour: hourlySales,
 
-// const stjohns = () {
-//     min: 20,
-//     max: 38,
-//     avg: 2.3,
-//     salesByHour: hourlySales,
-//     calcSales: function () {
+    render () {
 
-//     },
+    }
+};
+stjohns.salesByHour();
 
-//     render () {
+const waterfront = {
+    min: 2,
+    max: 16,
+    avg: 4.6,
+    salesByHour: hourlySales,
 
-//     }
-// };
-// stjohns.calcSales();
+    render () {
 
-// const waterfront = () {
-//     min: 2,
-//     max: 16,
-//     avg: 4.6,
-//     salesByHour: hourlySales,
-//     calcSales: function () {
-
-//     },
-
-//     render () {
-
-//     }
-// };
-// waterfront.calcSales();
+    }
+};
+waterfront.salesByHour();
 
 // // from: https://developer.mozilla.or/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 // //     return Math.floor(Math.random()* (max -min +1) + min);
