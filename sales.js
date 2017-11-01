@@ -3,22 +3,18 @@
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm','2pm','3pm','4pm','5pm','6pm', '7pm'];
 
 const locations = ('Portland Airport', 'Pioneer Square', 'Powells', 'St Johns', 'Waterfront');
-
+//Class created via a constructor function. 
 function Store (name, min, max, avg) {
-    this.name=name;
+    this.name=name; //created method for name by using this.
     this.min=min;
     this.max=max;
     this.avg=avg;
+    this.hourlySales();
+
 }
-const pdx = new Store ('Portland Airport', 23, 65, 6.3 );
-const pioneer = new Store ('Pioneer Square', 3, 24, 1.2);
-const powells = new Store ('Powells', 11, 38, 3.7);
-const stJohns = new Store ('St Johns', 20, 38, 2.3);
-const waterfront = new Store ('Waterfront', 2, 16, 4.6);
 
-console.log(pdx)
 
-function hourlySales(){
+Store.prototype.hourlySales = function (){
     const salesByHour= [];
     for (let i=0; i < hours.length; i++) {
         const hour = hours[i];
@@ -53,11 +49,44 @@ function render(storeName) {
 
 }
 
+ 
 Store.prototype.render = function (){
-    const store = document.createElementById ('table-body')
-    const title = document.createElement('tablestore')
-    title.textContent=this.name;
+    const tbody = document.getElementById ('table-body');
+    const tr = document.createElement('TR');
+    const th = document.createElement('TH');
+    th.textContent=this.name;
+    tr.appendChild(th);
+  
+    tbody.appendChild(tr)
+
+    for (let i =0; i < hours.length; i++){
+        const td = document.createElement('TD');
+        td.textContent = this.salesByHour[i].cookiesSold;
+        tr.appendChild(td);
+    }
+
 }
+
+
+//constructor function is used to populate each of the stores with the parameters being pased under new Store in between ();
+const pdx = new Store ('Portland Airport', 23, 65, 6.3 );
+const pioneer = new Store ('Pioneer Square', 3, 24, 1.2);
+const powells = new Store ('Powells', 11, 38, 3.7);
+const stJohns = new Store ('St Johns', 20, 38, 2.3);
+const waterfront = new Store ('Waterfront', 2, 16, 4.6);
+
+console.log(pdx)
+
+pdx.render();
+
+
+// function storeHours ([hours]){
+//     const thread = document.getElementById('table-head');
+//     const th = document.createElment('headerhours');
+//     th.textContent=hours;
+//     thread.appendChild(th);
+
+// }
 // const pdx = {
 //     name: 'PDX Airport',
 //     min: 23,
@@ -123,4 +152,11 @@ Store.prototype.render = function (){
 // from: https://developer.mozilla.or/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 //     return Math.floor(Math.random()* (max -min +1) + min);
 
-
+// Store.prototype.render = function (){
+//     const tbody = document.getElementById ('table-body');
+//     const row = document.createElement('TR');
+//     const rowHeader = document.createElement('TH')
+//     rowHeader.textContent=this.name
+//     tableRow.appendChild
+//     const title = document.createElement('tablestore');
+//     title.textContent=this.name;
