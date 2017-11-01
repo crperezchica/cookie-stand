@@ -22,43 +22,33 @@ function getRandomInInclusive(min,max){
     return Math.floor(Math.random() * (max - min +1 )) + min;
 }
 
+function render(storeName) {
+    const div = document.getElementById('sales');
+    const h2 = document.createElement('h2');
+    h2.textContent = storeName;
+    div.appendChild(h2);
+    const ul = document.getElementById('sales');
+    for (let i = 0; i < hours.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = hours[i] + '' + this.salesByHour[i].cookiesSold + ' cookies '; 
+        ul.appendChild(li);
+ 
+    }
 
+}
 
-// const pdx = {
-    // min: 23,
-    // max: 65,
-    // avg: 6.3,
-    // hourlySales: hourlySales, 
-    // salesByHour: [],
-    // render: render
-    // function render () {
-    //     // const ul = document.createElement('li');
-    //     // li.textContent = this.hour + '' + this.salesByHour;
-    //     // return li;
-    //     for(let i=0; i <= salesByHour.length; i++){
-    //         app.appendendChild(salesByHour[i].render());
-        // }
-        // }
+const pdx = {
+    name: 'PDX Airport',
+    min: 23,
+    max: 65,
+    avg: 6.3,
+    hourlySales: hourlySales, 
+    salesByHour: [],
+    render: render,
+};
+pdx.hourlySales();
+pdx.render(pdx.name);
 
-// };
-// pdx.hourlySales();
-// console.log(pdx);
-// loadCookies(salesByHour);
-
-// const div = document.getElementById ('store');
-// const h2 = document.createElement ('h2');
-// h2.textContent = pioneer.name;
-// div.appendChild(h2);
-// console.log(div);
-// console.log(h2);
-
-// const ul = document.gentElementId('list');
-// for (let i=0; i < hours.lenght; i++) {
-//     const li = document.createElement('li');
-//     li.textContent = hours [i] + ':' + pioneersalesHour[i].cookiesSold + 'cookies';
-//     h2.appendChild(ul);
-//     ul.appendChild(li);
-// }
 
 const pioneer = { 
     name: 'Pioneer Square', 
@@ -66,94 +56,50 @@ const pioneer = {
     max: 24,
     avg: 1.2,
     hourlySales: hourlySales,
-    //salesByHour: [],
+    SalesByHour: [],
+    render: render,
     
 };
 pioneer.hourlySales();
+pioneer.render(pioneer.name);
 
-const div = document.getElementById ('store');
-const h2 = document.createElement ('h2');
-h2.textContent = pioneer.name;
-div.appendChild(h2);
-console.log(div);
-console.log(h2);
+const powells = {
+    name: 'Powells',
+    min: 11,
+    max: 38,
+    avg: 3.7,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+powells.hourlySales();
+powells.render(powells.name);
 
-const ul = document.getElementById('list');
-for (let i = 0; i < hours.length; i++) {
-    const li = document.createElement('li');
-    li.textContent = hours[i] + ':' + pioneer.salesByHour[i].cookiesSold + 'cookies';
-    h2.appendChild(ul);
-    ul.appendChild(li);
-}
+const stJohns =  {
+    name: 'St Johns',
+    min: 20,
+    max: 38,
+    avg: 2.3,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+stJohns.hourlySales();
+stJohns.render(stJohns.name);
 
-// const pioneerdiv = document.getElementById('pioneerdiv');
-// const pioneerh2 = document.createElement('h2');
-// pioneerh2.textContent = pioneer.name;
-// pioneerdiv.appendChild(pioneerh2);
+const waterfront = {
+    name: 'Waterfront',
+    min: 2,
+    max: 16,
+    avg: 4.6,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+waterfront.hourlySales();
+waterfront.render(waterfront.name);
 
-// const pioneerlist = document.getElementById('pioneerul');
-// for(let i = 0; i<pioneer.salesByHour.length; i++) {
-//     const li = document.createElement ('li');
-//     li.textContent = pioneer.salesByHour[i].hour + '-' + pioneer.salesByhour[i].cookiesSold
-//     pioneerlist.appendChild(li);
-// };
+// from: https://developer.mozilla.or/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+//     return Math.floor(Math.random()* (max -min +1) + min);
 
-//      render: function () {
-//         const li = document.createElement('li');
-//         li.textContent = this.hour + '' + this.salesByHour;
-//         return li;
-//         }
-//  };
-// pioneer.hourlySales();
-// console.log(pioneer);
 
-// const powells = {
-//     min: 11,
-//     max: 38,
-//     avg: 3.7,
-//     salesByHour: hourlySales,
-//     render: function () {
-//         const li = document.createElement('li');
-//         li.textContent = this.hour + '' + this.salesByHour;
-//         return li;
-//         }
-// };
-// powells.hourlySales();
-// console.log(powells);
-
-// const stjohns =  {
-//     min: 20,
-//     max: 38,
-//     avg: 2.3,
-//     salesByHour: hourlySales,
-
-//     render: function () {
-//         const li = document.createElement('li');
-//         li.textContent = this.hour + '' + this.salesByHour;
-//         return li;
-//         }
-// };
-// stjohns.hourlySales();
-// console.log(stjohns);
-
-// const waterfront = {
-//     min: 2,
-//     max: 16,
-//     avg: 4.6,
-//     salesByHour: hourlySales,
-//     render: function () {
-//         const li = document.createElement('li');
-//         li.textContent = this.hour + '' + this.salesByHour;
-//         return li;
-//         }
-// };
-// waterfront.hourlySales();
-// console.log(waterfront);
-
-// // // from: https://developer.mozilla.or/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-// // //     return Math.floor(Math.random()* (max -min +1) + min);
-// // // }
-
-// // // const store = 
-// // pdx.hourlySales();
-// // console.log(pdx);
