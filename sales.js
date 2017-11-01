@@ -2,6 +2,21 @@
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm','2pm','3pm','4pm','5pm','6pm', '7pm'];
 
+const pdx = new Store ('Portland Airport', 23, 65, 6.3 );
+const pioneer = new Store ('Pioneer Square', 3, 24, 1.2);
+const powells = new Store ('Powells', 11, 38, 3.7);
+const stJohns = new Store ('St Johns', 20, 38, 2.3);
+const waterfront = new Store ('Waterfront', 2, 16, 4.6);
+
+function Store (name, min, max, avg, salesByHour) {
+    this.name=name;
+    this.min=min;
+    this.max=max;
+    this.avg=avg;
+    this.salesByHour = [];
+
+}
+
 function hourlySales(){
     const salesByHour= [];
     for (let i=0; i < hours.length; i++) {
