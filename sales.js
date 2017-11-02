@@ -2,7 +2,7 @@
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm','2pm','3pm','4pm','5pm','6pm', '7pm'];
 
-const locations = ('Portland Airport', 'Pioneer Square', 'Powells', 'St Johns', 'Waterfront');
+const locations = ['Portland Airport', 'Pioneer Square', 'Powells', 'St Johns', 'Waterfront'];
 //Class created via a constructor function. 
 function Store (name, min, max, avg) {
     this.name=name; //created method for name by using this.
@@ -72,6 +72,7 @@ powells.render();
 stJohns.render();
 waterfront.render();
 
+
 renderHoursRow();
 
 function renderHoursRow (){
@@ -92,11 +93,11 @@ function renderHoursRow (){
 
 const stores = document.getElementById('stores');
 
-stores.appendChild(pdx.render());
-stores.appendChild(pioneer.render());
-stores.appendChild(powells.render());
-stores.appendChild(stJohns.render());
-stores.appendChild(waterfront.render());
+// stores.appendChild(pdx.render());
+// stores.appendChild(pioneer.render());
+// stores.appendChild(powells.render());
+// stores.appendChild(stJohns.render());
+// stores.appendChild(waterfront.render());
 
 const form = document.getElementById('new-stores');
 
@@ -106,10 +107,12 @@ form.addEventListener('submit', function (e) {
     console.log('the form heard a submit event!');
 
     const storename = document.getElementById('storename').value;
+    console.log(storename);
     const min = document.getElementById('min').value;
     const max = document.getElementById('max').value;
     const avg = document.getElementById('avg').value;
 
     const newStore = new Store (storename, min,max,avg);
-    stores.appendChild(newStore.render());
+    newStore.render();    
+ 
 });
