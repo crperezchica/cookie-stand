@@ -36,23 +36,23 @@ function getRandomInInclusive(min,max){
 }
 
 
- function(){
+function renderHoursRow (){
     const thead = document.getElementById('table-head');
     const tr = document.createElement('TR');
-    tr.appendChild(thead)
+    thead.appendChild(tr);
+    const emptyTh = document.createElement('TH');
+    tr.appendChild(emptyTh);
 
     for (let i=0; i < hours.length; i++) {
         const hour = hours[i];
         const th = document.createElement('TH');
-        th.textContent = hours([i]);
-        th.appendChild(tr);
+        th.textContent = hours[i];
+        tr.appendChild(th);
     }
-    
 } 
 
 
-
- //created a function with the prototype render ? to create table with store name and hourly sales data 
+//created a function with the prototype render ? to create table with store name and hourly sales data 
 Store.prototype.render = function (){
     const tbody = document.getElementById ('table-body');
     const tr = document.createElement('TR');
@@ -85,6 +85,8 @@ pioneer.render();
 powells.render();
 stJohns.render();
 waterfront.render();
+
+renderHoursRow();
 
 
 // function storeHours ([hours]){
