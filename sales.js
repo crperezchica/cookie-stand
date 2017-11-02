@@ -13,7 +13,8 @@ function Store (name, min, max, avg) {
 
 }
 
-
+//since we created a constructor function and an instance of a store. I had to create a prototype of the store for hourly sales and the function created to run/calculate 
+//lives within the this fuction
 Store.prototype.hourlySales = function (){
     const salesByHour= [];
     for (let i=0; i < hours.length; i++) {
@@ -34,22 +35,24 @@ function getRandomInInclusive(min,max){
     return Math.floor(Math.random() * (max - min +1 )) + min;
 }
 
-function render(storeName) {
-    const div = document.getElementById('sales');
-    const h2 = document.createElement('h2');
-    h2.textContent = storeName;
-    div.appendChild(h2);
-    const ul = document.getElementById('sales');
-    for (let i = 0; i < hours.length; i++) {
-        const li = document.createElement('li');
-        li.textContent = hours[i] + '' + this.salesByHour[i].cookiesSold + ' cookies '; 
-        ul.appendChild(li);
- 
+
+ function(){
+    const thead = document.getElementById('table-head');
+    const tr = document.createElement('TR');
+    tr.appendChild(thead)
+
+    for (let i=0; i < hours.length; i++) {
+        const hour = hours[i];
+        const th = document.createElement('TH');
+        th.textContent = hours([i]);
+        th.appendChild(tr);
     }
+    
+} 
 
-}
 
- 
+
+ //created a function with the prototype render ? to create table with store name and hourly sales data 
 Store.prototype.render = function (){
     const tbody = document.getElementById ('table-body');
     const tr = document.createElement('TR');
@@ -78,6 +81,10 @@ const waterfront = new Store ('Waterfront', 2, 16, 4.6);
 console.log(pdx)
 
 pdx.render();
+pioneer.render();
+powells.render();
+stJohns.render();
+waterfront.render();
 
 
 // function storeHours ([hours]){
@@ -85,6 +92,22 @@ pdx.render();
 //     const th = document.createElment('headerhours');
 //     th.textContent=hours;
 //     thread.appendChild(th);
+
+//Function render created for lab6 to obtain data in a list with content
+// function render(storeName) {
+//     const div = document.getElementById('sales');
+//     const h2 = document.createElement('h2');
+//     h2.textContent = storeName;
+//     div.appendChild(h2);
+//     const ul = document.getElementById('sales');
+//     for (let i = 0; i < hours.length; i++) {
+//         const li = document.createElement('li');
+//         li.textContent = hours[i] + '' + this.salesByHour[i].cookiesSold + ' cookies '; 
+//         ul.appendChild(li);
+ 
+//     }
+
+// }
 
 // }
 // const pdx = {
