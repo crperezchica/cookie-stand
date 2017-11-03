@@ -1,0 +1,30 @@
+
+body {
+    background-color:#d08989; 
+   
+}
+
+#primary {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: darkred;
+    font-size: 3em;
+}
+
+/* h1 {
+    color: darkred;
+
+} */
+
+
+.container {
+    position: relative;
+    text-align: center;
+    color: darkred;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+
+}
