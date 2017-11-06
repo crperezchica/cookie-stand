@@ -1,0 +1,68 @@
+body{
+    background-image:url(http://www.zingerbugimages.com/backgrounds/salmon_bamboo_wallpaper_tileable.jpg);
+    /* background-position:top left;
+    background-repeat:repeat;
+    background-attachment:fixed; */
+}
+
+header{
+    color: darkred;
+    font-family: 'Anton', sans-serif;
+    font-size: 200%;
+    text-align: center;
+}
+
+nav {
+    clear: both;
+    color: saddlebrown;
+    background-color: whitesmoke;
+    height: 30px;
+    text-align: center;
+}
+
+nav ul{
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 40px;
+}
+nav li a{
+    color: saddlebrown;
+}
+nav li a:hover, nav li a.current {
+    color: wheat;
+}
+
+img.center {
+    display: block;
+    margin: 0px auto;
+    width: 30%;
+    height: 20%;
+}
+
+img{
+    display: block;
+    margin: 0px auto;
+}
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px; 
+    color: darkslategrey;
+}
+
+p{
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: saddlebrown;
+}
+
+ul{
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    color: saddlebrown;
+    font-size: 18px;
+}
