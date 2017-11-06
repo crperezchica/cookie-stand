@@ -1,6 +1,6 @@
 
 body {
-    background-color:#d08989; 
+    background-image:url(http://www.zingerbugimages.com/backgrounds/salmon_bamboo_wallpaper_tileable.jpg);
    
 }
 
@@ -10,21 +10,98 @@ body {
     font-size: 3em;
 }
 
-/* h1 {
-    color: darkred;
-
-} */
-
-
-.container {
-    position: relative;
+header {
+    background-image: "images/chinook.jpg";
+   background-position: center center;
+    font-size: 200%;
     text-align: center;
     color: darkred;
+
 }
 
-.top-left {
-    position: absolute;
-    top: 8px;
-    right: 16px;
+table {
+    border: 1px solid darkslategrey;
+    width:100%;
+}
 
+#second {
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+#table-head{
+    color: steelblue;
+    font-size: 20px;
+    background-color: whitesmoke;
+}
+
+#table-body{
+    color: saddlebrown;
+    font-weight: bold;
+    background-color: whitesmoke;
+    text-align: center;
+   
+}
+
+form{
+   
+    background-color: gray;
+    border: black;
+}
+
+fieldset{
+    flex-basis: 50%;
+    border: black;
+    background-color: wheat;
+    
+
+}
+
+input[type="text"] {
+   font-family: Arial, Helvetica, sans-serif;
+   color: darkred;
+   text-align: center;
+   padding: 5px;
+   margin-bottom: 20px;
+}
+legend{
+    color: darkred;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 20px;
+
+}
+
+label[for="storename"], label[for="min"], label[for="max"], label[for="avg"] {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: darkcyan;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+nav {
+    clear: both;
+    color: saddlebrown;
+    background-color: whitesmoke;
+    height: 30px;
+    text-align: center;
+}
+
+nav ul{
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 40px;
+}
+nav li a{
+    color: saddlebrown;
+}
+nav li a:hover, nav li a.current {
+    color: wheat;
 }
